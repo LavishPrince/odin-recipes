@@ -32,11 +32,12 @@
         path: /var/www/html/odin-recipes/
         state: directory
 
-    - name: Copy website files
-      become: true
-      ansible.builtin.copy:
+    - name: Synchronize website files
+      ansible.posix.synchronize:
         src: ../
         dest: /var/www/html/odin-recipes/
+        rsync_opts:
+          - "--exclude=.git"
 
     - name: Restart nginx server
       become: true
