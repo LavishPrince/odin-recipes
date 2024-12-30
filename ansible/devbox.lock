@@ -1,0 +1,69 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "ansible@latest": {
+      "last_modified": "2024-12-03T12:40:06Z",
+      "resolved": "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550#ansible",
+      "source": "devbox-search",
+      "version": "2.17.6",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6kfsz5zlmp6v5fx3wnps5js389xxplyh-python3.12-ansible-core-2.17.6",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/lfnq585gp82s8522xn2cdzrrpdh1lm0c-python3.12-ansible-core-2.17.6-dist"
+            }
+          ],
+          "store_path": "/nix/store/6kfsz5zlmp6v5fx3wnps5js389xxplyh-python3.12-ansible-core-2.17.6"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s3snij4p1plrjzfbqin87wxy6bxfdk9w-python3.12-ansible-core-2.17.6",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/lmfn1h5nrxlc7h2a0kfvbh0qz7r4za3d-python3.12-ansible-core-2.17.6-dist"
+            }
+          ],
+          "store_path": "/nix/store/s3snij4p1plrjzfbqin87wxy6bxfdk9w-python3.12-ansible-core-2.17.6"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/29irpn3hj1mwfl7arr8ds6w83lxhqf9n-python3.12-ansible-core-2.17.6",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/z65wkplazxqld1kqqqkc4rjz20ygxd6m-python3.12-ansible-core-2.17.6-dist"
+            }
+          ],
+          "store_path": "/nix/store/29irpn3hj1mwfl7arr8ds6w83lxhqf9n-python3.12-ansible-core-2.17.6"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qa1l5ydbij9hlz65ndd7kv9cxnkcz979-python3.12-ansible-core-2.17.6",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/frcfadw6rrq9ncvacccvgzw92agkaxl0-python3.12-ansible-core-2.17.6-dist"
+            }
+          ],
+          "store_path": "/nix/store/qa1l5ydbij9hlz65ndd7kv9cxnkcz979-python3.12-ansible-core-2.17.6"
+        }
+      }
+    }
+  }
+}
