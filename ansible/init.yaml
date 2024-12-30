@@ -7,7 +7,7 @@
         update_cache: yes
 
   tasks:
-    - name: Update Apt Cache
+    - name: Install nginx
       become: true
       ansible.builtin.apt:
         name: nginx
@@ -35,10 +35,16 @@
     - name: Synchronize website files
       become: true
       ansible.posix.synchronize:
-        src: ../
-        dest: /var/www/html/odin-recipes/
+        src: ../../
+        dest: /var/www/html/odin-recipes
         rsync_opts:
           - "--exclude=.git"
+
+    - name: Delete ansible folder
+      become: true
+      ansible.builtin.file:
+        state: absent
+        path: /var/www/html/odin-recipes/ansible
 
     - name: Restart nginx server
       become: true
