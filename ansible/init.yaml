@@ -10,4 +10,5 @@
     - name: Update Apt Cache
       become: true
       ansible.builtin.apt:
-        update_cache: yes
+        name: nginx
+        present: latest
