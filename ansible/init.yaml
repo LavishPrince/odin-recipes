@@ -24,6 +24,7 @@
       ansible.builtin.file:
         src: /etc/nginx/sites-available/odin-recipes.duckdns.org.conf
         dest: /etc/nginx/sites-enabled/odin-recipes.duckdns.org.conf
+        state: link
 
     - name: Creates directory
       become: true
