@@ -27,4 +27,5 @@ jobs:
       - name: Deploy
         run: |
           cd ansible
+          twingate resources
           ansible-playbook -i inventry.yaml init.yaml
