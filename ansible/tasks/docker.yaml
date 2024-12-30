@@ -72,7 +72,6 @@
     state: latest
 
 - name: Load image to podman registry
-  become: true
   containers.podman.podman_load:
     input: /var/www/html/odin-recipes/ansible/test.tar
 
