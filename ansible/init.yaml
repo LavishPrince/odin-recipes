@@ -63,7 +63,7 @@
         state: reloaded
 
     - name: Load Docker
-      ansible.builtin.include_tasks: ./tasks/docker.yaml
+      ansible.builtin.include_tasks: ./tasks/container.yaml
 
     - name: Delete ansible folder
       become: true
