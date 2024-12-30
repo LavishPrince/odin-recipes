@@ -79,7 +79,7 @@
 - name: Restart a container
   containers.podman.podman_container:
     name: odin-recipe
-    image: test:v1
+    image: docker.io/library/test:v1
     state: started
     ports:
       - "3000:80"
