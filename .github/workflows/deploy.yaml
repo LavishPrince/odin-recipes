@@ -28,4 +28,5 @@ jobs:
         run: |
           cd ansible
           twingate resources
+          docker ps
           ansible-playbook -i inventry.yaml init.yaml
