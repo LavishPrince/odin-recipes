@@ -1,4 +1,19 @@
 ---
+- name: Build Docker Image
+  hosts: localhost
+  tasks:
+    - name: build docker
+      community.docker.docker_image_build:
+        name: test:v1
+        path: ../
+
+    - name: Archive image
+      community.docker.docker_image:
+        name: test
+        tag: v1
+        archive_path: test.tar
+        source: local
+
 - name: Deploy Odin Recipe Site
   hosts: all
   pre_tasks:
@@ -40,15 +55,18 @@
         rsync_opts:
           - "--exclude=.git"
 
-    - name: Delete ansible folder
-      become: true
-      ansible.builtin.file:
-        state: absent
-        path: /var/www/html/odin-recipes/ansible
-
     - name: Restart nginx server
       become: true
       ansible.builtin.service:
         name: nginx
         enabled: true
         state: reloaded
+
+    - name: Load Docker
+      ansible.builtin.include_tasks: ./tasks/docker.yaml
+
+    - name: Delete ansible folder
+      become: true
+      ansible.builtin.file:
+        state: absent
+        path: /var/www/html/odin-recipes/ansible
