@@ -20,16 +20,19 @@
         dest: /etc/nginx/sites-available/odin-recipes.duckdns.org.conf
 
     - name: Create a symbolic link
+      become: true
       ansible.builtin.file:
         src: /etc/nginx/sites-available/odin-recipes.duckdns.org.conf
         dest: /etc/nginx/sites-enabled/odin-recipes.duckdns.org.conf
 
     - name: Creates directory
+      become: true
       ansible.builtin.file:
         path: /var/www/html/odin-recipes/
         state: directory
 
     - name: Copy website files
+      become: true
       ansible.builtin.copy:
         src: ../
         dest: /var/www/html/odin-recipes/
