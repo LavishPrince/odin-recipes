@@ -21,4 +21,5 @@ jobs:
 
       - name: Deploy
         run: |
+          cd ansible
           ansible-playbook -i inventry.yaml init.yaml
