@@ -10,7 +10,7 @@
 
 - name: Prune everything
   containers.podman.podman_prune:
-    images: true
+    image: true
 
 - name: Restart a container
   containers.podman.podman_container:
