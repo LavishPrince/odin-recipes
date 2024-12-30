@@ -43,4 +43,4 @@
       ansible.builtin.service:
         name: nginx
         enabled: true
-        state: reload
+        state: reloaded
