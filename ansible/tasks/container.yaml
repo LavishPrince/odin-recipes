@@ -13,7 +13,7 @@
     name: odin-recipe
     image: docker.io/library/test:v1
     state: started
-    recreated: true
+    recreate: true
     ports:
       - "3000:80"
 
