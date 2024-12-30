@@ -12,3 +12,24 @@
       ansible.builtin.apt:
         name: nginx
         state: latest
+
+    - name: Copy nginx conf
+      become: true
+      ansible.builtin.copy:
+        src: ./config-files/nginx.conf
+        dest: /etc/nginx/sites-available/odin-recipes.duckdns.org.conf
+
+    - name: Create a symbolic link
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/odin-recipes.duckdns.org.conf
+        dest: /etc/nginx/sites-enabled/odin-recipes.duckdns.org.conf
+
+    - name: Creates directory
+      ansible.builtin.file:
+        path: /var/www/html/odin-recipes/
+        state: directory
+
+    - name: Copy website files
+      ansible.builtin.copy:
+        src: ../
+        dest: /var/www/html/odin-recipes/
