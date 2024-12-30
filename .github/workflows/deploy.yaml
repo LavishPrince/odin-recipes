@@ -19,6 +19,10 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > Adaeri_AWS_EC2.pem
           chmod 400 Adaeri_AWS_EC2.pem
 
+      - name: Connect to twingate
+        uses: twingate/github-action@v1
+            with: "${{ secrets.TWINGATE_KEY }}"
+
       - name: Deploy
         run: |
           cd ansible
