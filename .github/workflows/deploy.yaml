@@ -21,7 +21,8 @@ jobs:
 
       - name: Connect to twingate
         uses: twingate/github-action@v1
-            with: "${{ secrets.TWINGATE_KEY }}"
+        with:
+          service-key: "${{ secrets.TWINGATE_KEY }}"
 
       - name: Deploy
         run: |
