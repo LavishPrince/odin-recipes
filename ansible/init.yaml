@@ -11,4 +11,4 @@
       become: true
       ansible.builtin.apt:
         name: nginx
-        present: latest
+        state: latest
