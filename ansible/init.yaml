@@ -37,3 +37,10 @@
       ansible.builtin.copy:
         src: ../
         dest: /var/www/html/odin-recipes/
+
+    - name: Restart nginx server
+      become: true
+      ansible.builtin.service:
+        name: nginx
+        enabled: true
+        state: reload
