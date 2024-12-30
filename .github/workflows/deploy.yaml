@@ -1,0 +1,24 @@
+name: Deploy Odin Recipe
+run-name: ${{ github.actor }}
+
+on: workflow_dispatch
+
+jobs:
+  Deploy-Odin-Recipe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Install Ansible
+        run: apt install -y ansible
+
+      - name: Load the Key
+        run: |
+          cd ansible
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > Adaeri_AWS_EC2.pem
+          chmod 400 Adaeri_AWS_EC2.pem
+
+      - name: Deploy
+        run: |
+          ansible-playbook -i inventry.yaml init.yaml
