@@ -33,6 +33,7 @@
         state: directory
 
     - name: Synchronize website files
+      become: true
       ansible.posix.synchronize:
         src: ../
         dest: /var/www/html/odin-recipes/
