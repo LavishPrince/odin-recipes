@@ -1,0 +1,17 @@
+- name: Install podman
+  become: true
+  ansible.builtin.apt:
+    name: podman
+    state: latest
+
+- name: Load image to podman registry
+  containers.podman.podman_load:
+    input: /var/www/html/odin-recipes/ansible/test.tar
+
+- name: Restart a container
+  containers.podman.podman_container:
+    name: odin-recipe
+    image: docker.io/library/test:v1
+    state: started
+    ports:
+      - "3000:80"
