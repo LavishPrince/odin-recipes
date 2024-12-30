@@ -2,7 +2,7 @@
 all:
   hosts:
     ubuntu:
-      ansible_host: 172.31.88.146
+      ansible_host: 172.31.29.227
       ansible_user: ubuntu
       ansible_connection: ssh
       ansible_ssh_private_key_file: ./Adaeri_AWS_EC2.pem
