@@ -1,6 +1,9 @@
 ---
 - name: Deploy Odin Recipe Site
   hosts: all
+  pre_tasks:
+    ansible.builtin.apt:
+      update_cache: yes
 
   tasks:
     - name: Update Apt Cache
