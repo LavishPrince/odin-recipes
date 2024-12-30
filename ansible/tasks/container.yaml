@@ -8,14 +8,15 @@
   containers.podman.podman_load:
     input: /var/www/html/odin-recipes/ansible/test.tar
 
-- name: Prune everything
-  containers.podman.podman_prune:
-    image: true
-
 - name: Restart a container
   containers.podman.podman_container:
     name: odin-recipe
     image: docker.io/library/test:v1
     state: started
+    recreated: true
     ports:
       - "3000:80"
+
+- name: Prune everything
+  containers.podman.podman_prune:
+    image: true
